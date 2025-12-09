@@ -26,13 +26,14 @@ results/figure/last.png: scripts/plotcount.py results/last.dat
 results/figure/sierra.png: scripts/plotcount.py results/sierra.dat
 	python scripts/plotcount.py --input_file=results/sierra.dat --output_file=results/figure/sierra.png
 
-#report/count_report.qmd: results/figure/isles.png results/figure/abyss.png results/figure/last.png results/figure/sierra.png
-#	quarto render report/count_report.qmd
+report/count_report.qmd: results/figure/isles.png results/figure/abyss.png results/figure/last.png results/figure/sierra.png
+	quarto render report/count_report.qmd
 
 clean:
 	rm -f results/*.dat
 	rm -f results/figure/*.png
-	rm -f report/*.qmd
+	rm -f report/*.html
+	rm -rf report/count_report_files
 
 scratch:
 	make results/isles.dat
@@ -46,7 +47,7 @@ scratch:
 
 all:
 	make scratch
-	quarto render report/count_report.qmd
+	make report/count_report.qmd
 
 
 
