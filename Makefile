@@ -29,8 +29,19 @@ results/figure/sierra.png: scripts/plotcount.py results/sierra.dat
 report/count_report.qmd: results/figure/isles.png results/figure/abyss.png results/figure/last.png results/figure/sierra.png
 	quarto render report/count_report.qmd
 
+clean:
+	rm -f results/*
+	rm -f report/*
 
-
+scratch:
+	make results/isles.dat
+	make results/abyss.dat
+	make results/last.dat
+	make results/sierra.dat
+	make results/figure/isles.png
+	make results/figure/abyss.png
+	make results/figure/last.png
+	make results/figure/sierra.png
 
 
 
