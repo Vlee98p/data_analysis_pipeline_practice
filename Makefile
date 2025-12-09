@@ -30,24 +30,7 @@ report/count_report.qmd: results/figure/isles.png results/figure/abyss.png resul
 	quarto render report/count_report.qmd
 
 
-clean:
-# rm -f results/*
-	rm -f results/
-	rm -f report/count_report.qmd
 
-scratch:
-	make results/isles.dat
-	make results/abyss.dat
-	make results/last.dat
-	make results/sierra.dat
-	make results/figure/isles.png
-	make results/figure/abyss.png
-	make results/figure/last.png
-	make results/figure/sierra.png
-
-all:
-	make scratch
-	make report/count_report.qmd
 
 
 
