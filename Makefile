@@ -43,6 +43,10 @@ scratch:
 	make results/figure/last.png
 	make results/figure/sierra.png
 
+all:
+	make scratch
+	make report/count_report.qmd
+
 
 
 	
